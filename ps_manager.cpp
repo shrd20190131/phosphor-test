@@ -12,7 +12,7 @@ namespace manager
 
 
 std::string PsInit::status(std::string value){
-    sleep(60);
+    sleep(5);
     return (std::string("ok"));
 }
 
