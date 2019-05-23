@@ -2,7 +2,7 @@ AM_DEFAULT_SOURCE_EXT = .cpp
 
 sbin_PROGRAMS = phosphor-test-manager 
             
-phosphor_powerswitch_manager_SOURCES = \
+phosphor_test_manager_SOURCES = \
     ps_manager_main.cpp \
     ps_manager.cpp 
 
