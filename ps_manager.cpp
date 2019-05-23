@@ -11,8 +11,8 @@ namespace manager
 {
 
 
-std::string PsInit::status() const{
-    sleep(30);
+std::string status(std::string value) const{
+    sleep(60);
     return (std::string("ok"));
 }
 

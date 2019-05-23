@@ -43,7 +43,7 @@ class PsInit: public PsInherit
         {
             //
         }
-        std::string status() const override;
+        std::string status(std::string value) override;
 };
 
 } // namespace manager
