@@ -1,9 +1,5 @@
 AM_DEFAULT_SOURCE_EXT = .cpp
 
-# Build these headers, don't install them
-noinst_HEADERS = \
-    usi_log.hpp 
-
 sbin_PROGRAMS = phosphor-test-manager 
             
 phosphor_test_manager_SOURCES = \
