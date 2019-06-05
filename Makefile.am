@@ -16,8 +16,6 @@ BUILT_SOURCES = \
     
 CLEANFILES = ${BUILT_SOURCES}
 
-include static/Makefile.am.include
-
 com/usi/Ssdarray/Switch/error.hpp: ${top_srcdir}/com/usi/Ssdarray/Switch.errors.yaml
     @mkdir -p `dirname $@`
     $(SDBUSPLUSPLUS) -r $(srcdir) error exception-header com.usi.Ssdarray.Switch > $@
