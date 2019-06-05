@@ -4,9 +4,10 @@ namespace phosphor
 {
 namespace jboflog
 {
-namespace manager{
+namespace manager
+{
     
-class info
+class log
 {
   public:
     void ssdinfo_create_log();

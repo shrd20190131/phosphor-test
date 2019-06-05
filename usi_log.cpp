@@ -23,7 +23,7 @@ namespace Ssdarray = phosphor::logging::xyz::openbmc_project::Ssdarray;
 using SsdLinkFail = Ssdarray::Switch::SsdLinkFailure;
 namespace fs = std::experimental::filesystem;
     
-void info::ssdinfo_create_log{
+void log::ssdinfo_create_log{
     
     //log<level::ERR>("Ssd link fail",
     //                        entry("FILENAME=%s", tarFilePath.c_str()));

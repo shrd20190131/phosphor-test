@@ -2,7 +2,9 @@
 
 int main(int argc, char* argv[])
 {
-    ssdinfo_create_log();
+    
+    phosphor::jboflog::manager::log logmanager;
+    logmanager.ssdinfo_create_log();
     
     return 0;
 }
