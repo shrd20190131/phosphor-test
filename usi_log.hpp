@@ -7,7 +7,7 @@ namespace jboflog
 namespace manager
 {
     
-class log
+class Infolog
 {
   public:
     void ssdinfo_create_log();

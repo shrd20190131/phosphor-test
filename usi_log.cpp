@@ -19,11 +19,11 @@ namespace manager
     
 using namespace phosphor::logging;
 using namespace sdbusplus::com::usi::Ssdarray::Switch::Error;
-namespace Ssdarray = phosphor::logging::com::usi::Ssdarray;
-using SsdLinkFail = Ssdarray::Switch::SsdLinkFailure;
+//namespace Ssdarray = phosphor::logging::com::usi::Ssdarray;
+//using SsdLinkFail = Ssdarray::Switch::SsdLinkFailure;
 namespace fs = std::experimental::filesystem;
     
-void log::ssdinfo_create_log{
+void Infolog::ssdinfo_create_log{
     
     //log<level::ERR>("Ssd link fail",
     //                        entry("FILENAME=%s", tarFilePath.c_str()));
