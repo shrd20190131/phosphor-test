@@ -19,8 +19,8 @@ namespace manager
     
 using namespace phosphor::logging;
 using namespace sdbusplus::com::usi::Ssdarray::Switch::Error;
-//namespace Ssdarray = phosphor::logging::com::usi::Ssdarray;
-//using SsdLinkFail = Ssdarray::Switch::SsdLinkFailure;
+namespace Ssdarray = phosphor::logging::com::usi::Ssdarray;
+using SsdLinkFail = Ssdarray::Switch::SsdLinkFailure;
 namespace fs = std::experimental::filesystem;
     
 void Infolog::ssdinfo_create_log(){
@@ -29,7 +29,7 @@ void Infolog::ssdinfo_create_log(){
     //                        entry("FILENAME=%s", tarFilePath.c_str()));
     //report<SsdLinkFailure>(SsdLinkFail::PATH(tarFilePath.c_str()));
     log<level::ERR>("Ssd link fail");
-    report<SsdLinkFailure>();
+    //report<SsdLinkFailure>();
 }
     
 }//namespace manager

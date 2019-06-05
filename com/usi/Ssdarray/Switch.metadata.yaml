@@ -1,0 +1,6 @@
+- name: SsdLinkFailure
+  level: ERR
+  meta:
+    - str: "FAIL=%s"
+      type: string
+
