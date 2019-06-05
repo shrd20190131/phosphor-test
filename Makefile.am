@@ -8,8 +8,10 @@ phosphor_test_manager_SOURCES = \
 
 phosphor_test_manager_LDFLAGS = $(SDBUSPLUS_LIBS) \
                                  $(PHOSPHOR_DBUS_INTERFACES_LIBS) \
-                                 $(USI_DBUS_INTERFACES_LIBS)
+                                 $(USI_DBUS_INTERFACES_LIBS) \
+                                 $(PHOSPHOR_LOGGING_LIBS)
                                  
 phosphor_test_manager_CFLAGS =  $(SDBUSPLUS_CFLAGS) \
                                  $(PHOSPHOR_DBUS_INTERFACES_CFLAGS) \
-                                 $(USI_DBUS_INTERFACES_LIBS)
+                                 $(USI_DBUS_INTERFACES_LIBS) \
+                                 $(PHOSPHOR_LOGGING_CFLAGS)

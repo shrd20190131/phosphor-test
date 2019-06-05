@@ -15,6 +15,7 @@ PKG_CHECK_MODULES([SYSTEMD], [libsystemd >= 221])
 PKG_CHECK_MODULES([PHOSPHOR_DBUS_INTERFACES], [phosphor-dbus-interfaces])
 PKG_CHECK_MODULES([USI_DBUS_INTERFACES], [usi-dbus-interfaces])
 PKG_CHECK_MODULES([SDBUSPLUS], [sdbusplus])
+PKG_CHECK_MODULES([PHOSPHOR_LOGGING], [phosphor-logging])
 
 # Checks for typedefs, structures, and compiler characteristics.
 AX_CXX_COMPILE_STDCXX_17([noext])
@@ -29,10 +30,17 @@ AC_DEFINE(PS_OBJPATH, "/xyz/openbmc_project/ssdarray/test", [The log manager DBu
 # Check for header files.
 AC_CHECK_HEADER(systemd/sd-bus.h, ,[AC_MSG_ERROR([Could not find systemd/sd-bus.h...systemd development package required])])
 AC_CHECK_HEADER(sdbusplus/server.hpp, ,[AC_MSG_ERROR([Could not find sdbusplus/server.hpp...openbmc/sdbusplus package required])])
+AC_CHECK_HEADER(phosphor-logging/log.hpp, ,[AC_MSG_ERROR([Could not find phosphor-logging/log.hpp...openbmc/phosphor-logging package required])])
 
 AC_ARG_VAR(CLASS_VERSION, [Class version to register with Cereal])
 AS_IF([test "x$CLASS_VERSION" == "x"], [CLASS_VERSION=1])
 AC_DEFINE_UNQUOTED([CLASS_VERSION], [$CLASS_VERSION], [Class version to register with Cereal])
 
+AC_ARG_VAR(ERRLOG_PERSIST_PATH, [Path to save errors in])
+AS_IF([test "x$ERRLOG_PERSIST_PATH" == "x"], \
+    [ERRLOG_PERSIST_PATH="/var/lib/usi-logging/errors"])
+AC_DEFINE_UNQUOTED([ERRLOG_PERSIST_PATH], ["$ERRLOG_PERSIST_PATH"], \
+    [Path to save errors in])
+    
 AC_CONFIG_FILES([Makefile])
 AC_OUTPUT
