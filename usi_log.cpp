@@ -7,7 +7,7 @@
 #include <phosphor-logging/log.hpp>
 #include <string>
 #include <cstring>
-#include <xyz/openbmc_project/Ssdarray/Switch/error.hpp>
+#include <com/usi/Ssdarray/Switch/error.hpp>
 #include "usi_log.hpp"
 
 namespace phosphor
@@ -19,7 +19,7 @@ namespace manager
     
 using namespace phosphor::logging;
 using namespace sdbusplus::com::usi::Ssdarray::Switch::Error;
-namespace Ssdarray = phosphor::logging::xyz::openbmc_project::Ssdarray;
+namespace Ssdarray = phosphor::logging::com::usi::Ssdarray;
 using SsdLinkFail = Ssdarray::Switch::SsdLinkFailure;
 namespace fs = std::experimental::filesystem;
     
