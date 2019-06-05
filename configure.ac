@@ -35,12 +35,6 @@ AC_CHECK_HEADER(phosphor-logging/log.hpp, ,[AC_MSG_ERROR([Could not find phospho
 AC_ARG_VAR(CLASS_VERSION, [Class version to register with Cereal])
 AS_IF([test "x$CLASS_VERSION" == "x"], [CLASS_VERSION=1])
 AC_DEFINE_UNQUOTED([CLASS_VERSION], [$CLASS_VERSION], [Class version to register with Cereal])
-
-AC_ARG_VAR(ERRLOG_PERSIST_PATH, [Path to save errors in])
-AS_IF([test "x$ERRLOG_PERSIST_PATH" == "x"], \
-    [ERRLOG_PERSIST_PATH="/var/lib/usi-logging/errors"])
-AC_DEFINE_UNQUOTED([ERRLOG_PERSIST_PATH], ["$ERRLOG_PERSIST_PATH"], \
-    [Path to save errors in])
-    
+  
 AC_CONFIG_FILES([Makefile])
 AC_OUTPUT
