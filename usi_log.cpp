@@ -23,7 +23,7 @@ using namespace sdbusplus::com::usi::Ssdarray::Switch::Error;
 //using SsdLinkFail = Ssdarray::Switch::SsdLinkFailure;
 namespace fs = std::experimental::filesystem;
     
-void Infolog::ssdinfo_create_log{
+void Infolog::ssdinfo_create_log(){
     
     //log<level::ERR>("Ssd link fail",
     //                        entry("FILENAME=%s", tarFilePath.c_str()));
