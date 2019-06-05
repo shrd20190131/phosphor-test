@@ -4,7 +4,7 @@ sbin_PROGRAMS = phosphor-test-manager
             
 phosphor_test_manager_SOURCES = \
     usi_log_main.cpp \
-    usi_Log.cpp 
+    usi_log.cpp 
 
 phosphor_test_manager_LDFLAGS = $(SDBUSPLUS_LIBS) \
                                  $(PHOSPHOR_DBUS_INTERFACES_LIBS) \
