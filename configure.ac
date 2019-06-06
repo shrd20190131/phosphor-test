@@ -1,5 +1,5 @@
 AC_PREREQ([2.69])
-AC_INIT([phosphor-log-manager], [1.0], [https://github.com/openbmc/shrd20190131/phosphor-log-manager/issues])
+AC_INIT([phosphor-switch-log-manager], [1.0], [https://github.com/openbmc/shrd20190131/phosphor-log-manager/issues])
 AC_LANG([C++])
 AC_CONFIG_HEADERS([config.h])
 AM_INIT_AUTOMAKE([subdir-objects -Wall -Werror foreign dist-xz])
