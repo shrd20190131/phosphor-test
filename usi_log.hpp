@@ -3,6 +3,8 @@
 #include <unistd.h>
 #include <string>
 #include <cstring>
+#include <sdbusplus/server.hpp>
+#include <sdbusplus/bus.hpp>
 
 namespace phosphor
 {
