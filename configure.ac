@@ -13,6 +13,7 @@ AC_SUBST([RANLIB], [${ac_tool_prefix}gcc-ranlib])
 AC_PROG_CXX
 AC_PROG_INSTALL #Checks/sets the install variable to be used
 AC_PROG_MAKE_SET
+AM_PROG_AR
 
 # Check for libraries
 PKG_CHECK_MODULES([SYSTEMD], [libsystemd >= 221])
