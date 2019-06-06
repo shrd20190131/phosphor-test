@@ -24,7 +24,7 @@ void Infolog::ssdinfo_create_log(){
     //                        entry("FILENAME=%s", tarFilePath.c_str()));
     //report<SsdLinkFailure>(SsdLinkFail::PATH(tarFilePath.c_str()));
     log<level::ERR>("Ssd link fail");
-    elog<SsdLinkFail>();
+    //elog<SsdLinkFail>();
     ///report<SsdLinkFailure>();
 }
     
