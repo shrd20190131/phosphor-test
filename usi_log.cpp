@@ -1,12 +1,7 @@
-#include "config.h"
-#include <sys/wait.h>
-#include <unistd.h>
 #include <experimental/filesystem>
 #include <phosphor-logging/elog-errors.hpp>
 #include <phosphor-logging/elog.hpp>
 #include <phosphor-logging/log.hpp>
-#include <string>
-#include <cstring>
 #include <com/usi/Ssdarray/Switch/error.hpp>
 #include "usi_log.hpp"
 

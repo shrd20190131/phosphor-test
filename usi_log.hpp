@@ -1,5 +1,9 @@
 #pragma once
 
+#include <unistd.h>
+#include <string>
+#include <cstring>
+
 namespace phosphor
 {
 namespace jboflog
