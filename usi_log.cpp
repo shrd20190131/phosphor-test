@@ -7,6 +7,7 @@
 #include <phosphor-logging/log.hpp>
 #include <string>
 #include <cstring>
+#include <elog-errors.hpp>
 #include <com/usi/Ssdarray/Switch/error.hpp>
 #include "usi_log.hpp"
 
