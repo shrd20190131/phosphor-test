@@ -13,12 +13,12 @@ namespace manager
     
 using namespace phosphor::logging;
 using SsdLinkFail = sdbusplus::com::usi::Ssdarray::Switch::Error::SsdLinkFailure;
-using FAIL = com::usi::Ssdarray::Switch::FAIL;
+using FAIL = phosphor::logging::com::usi::Ssdarray::Switch::SsdLinkFailure::FAIL;
     
 void Infolog::ssdinfo_create_log(){
     
     log<level::ERR>("Ssd link fail");
-    report<SsdLinkFailure>(FAIL("Ssd link fail"));
+    report<SsdLinkFail>(FAIL("Ssd link fail"));
 }
     
 }//namespace manager
