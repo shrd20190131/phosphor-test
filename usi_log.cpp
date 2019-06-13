@@ -22,7 +22,7 @@ void Switchlog::ssd_create_log(std::string& spec, std::string& num){
         ssderror_log = "ssd" + num + " link fail";
     }
 
-    if(!errorinfo.empty()){
+    if(!ssderror_log.empty()){
         log<level::ERR>(ssderror_log.c_str());
         report<SsdLinkFail>(SsdError(ssderror_log.c_str()));
     }

@@ -1,4 +1,5 @@
 #include "usi_log.hpp"
+#include <iostream>
 
 void print_usage(void)
 {
