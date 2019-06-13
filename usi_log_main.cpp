@@ -3,10 +3,10 @@
 
 void print_usage(void)
 {
-    std::cout << "example : phsophor-switch-log-manager -c xx -t xx -n xx"  << std::endl;
-    std::cout << "[-c <x>] : ssd/cable/fan...."  << std::endl;
-    std::cout << "[-t <x>] : linkstatus/status/linkspeed....."  << std::endl;
-    std::cout << "[-n <x>] : num"  << std::endl;
+    std::cout << "Example : phsophor-switch-log-manager -c xx -t xx -n xx"  << std::endl;
+    std::cout << "[-c <x>] : ssd/cable/fan"  << std::endl;
+    std::cout << "[-t <x>] : linkstatus/status/linkspeed/....."  << std::endl;
+    std::cout << "[-n <x>] : id number"  << std::endl;
 }
 
 //phosphor-switch-log-manager -c xx -t xx -n xx
@@ -42,6 +42,9 @@ int main(int argc, char* argv[])
     if(flag == 3){
         if(log_type.compare("ssd") == 0){
             switchlog_manager.ssd_create_log(log_type_spec, log_type_spec_num);
+        }
+        else if(log_type.compare("cable") == 0){
+            switchlog_manager.cable_create_log(log_type_spec, log_type_spec_num);
         }
     }
     else{

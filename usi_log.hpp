@@ -17,6 +17,7 @@ class Switchlog
 {
   public:
     void ssd_create_log(std::string& spec, std::string& num);
+    void cable_create_log(std::string& spec, std::string& num);
 };
 
 }//namespace manager

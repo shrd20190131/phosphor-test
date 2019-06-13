@@ -1,7 +1,7 @@
 #include <phosphor-logging/elog-errors.hpp>
 #include <phosphor-logging/elog.hpp>
 #include <phosphor-logging/log.hpp>
-#include <com/usi/Ssdarray/Log/error.hpp>
+#include <com/usi/Logging/error.hpp>
 #include "usi_log.hpp"
 
 namespace phosphor
@@ -12,22 +12,41 @@ namespace manager
 {
     
 using namespace phosphor::logging;
-using SsdLinkFail = sdbusplus::com::usi::Ssdarray::Log::Error::SsdFailure;
-using SsdError = phosphor::logging::com::usi::Ssdarray::Log::SsdFailure::ERROR;
+using SsdFail = sdbusplus::com::usi::Logging::Error::SsdFailure;
+using CableFail = sdbusplus::com::usi::Logging::Error::CableFailure;
+using FanFail = sdbusplus::com::usi::Logging::Error::FanFailure;
+using SsdError = phosphor::logging::com::usi::Logging::SsdFailure::ERROR;
+using CableError = phosphor::logging::com::usi::Logging::CableFailure::ERROR;
+using FanError = phosphor::logging::com::usi::Logging::FanFailure::ERROR;
     
 void Switchlog::ssd_create_log(std::string& spec, std::string& num){
     std::string ssderror_log;
 
     if(spec.compare("linkstatus") == 0){
-        ssderror_log = "ssd" + num + " link fail";
+        ssderror_log = "Ssd" + num + " link fail | ";
     }
 
     if(!ssderror_log.empty()){
         log<level::ERR>(ssderror_log.c_str());
-        report<SsdLinkFail>(SsdError(ssderror_log.c_str()));
+        report<SsdFail>(SsdError(ssderror_log.c_str()));
     }
 }
-    
+
+void Switchlog::cable_create_log(std::string& spec, std::string& num){
+    std::string cablerror_log;
+
+    if(spec.compare("linkstatus") == 0){
+        cablerror_log = "Cable" + num + " link fail | ";
+    }
+
+    if(!cablerror_log.empty()){
+        log<level::ERR>(cablerror_log.c_str());
+        report<CableFail>(CableError(cablerror_log.c_str()));
+    }
+
+
+}
+
 }//namespace manager
 }//namespace log     
 }//namespace phosphor
