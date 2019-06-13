@@ -13,12 +13,12 @@ namespace jboflog
 namespace manager
 {
     
-class Infolog
+class Switchlog
 {
   public:
-    void ssdinfo_create_log();
+    void ssd_create_log(std::string& spec, std::string& num);
 };
-    
+
 }//namespace manager
 }//namespace log     
 }//namespace phosphor

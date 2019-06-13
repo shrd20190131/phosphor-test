@@ -4,7 +4,7 @@ AM_DEFAULT_SOURCE_EXT = .cpp
 noinst_HEADERS = \
 	usi_log.hpp
 
-bin_PROGRAMS = phosphor-switch-log-manager
+sbin_PROGRAMS = phosphor-switch-log-manager
 
 phosphor_switch_log_manager_SOURCES = \
     usi_log_main.cpp \
