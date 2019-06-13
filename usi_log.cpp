@@ -23,7 +23,7 @@ void Createlog::ssd_create_log(std::string& spec, std::string& num){
     std::string ssderror_log;
 
     if(spec.compare("linkstatus") == 0){
-        ssderror_log = "Ssd" + num + " link fail" + "\n";
+        ssderror_log = "Ssd" + num + " link fail  |";
     }
 
     if(!ssderror_log.empty()){
@@ -36,7 +36,7 @@ void Createlog::cable_create_log(std::string& spec, std::string& num){
     std::string cablerror_log;
 
     if(spec.compare("linkstatus") == 0){
-        cablerror_log = "Cable" + num + " link fail" + "\n";
+        cablerror_log = "Cable" + num + " link fail  |";
     }
 
     if(!cablerror_log.empty()){
@@ -49,7 +49,7 @@ void Createlog::fan_create_log(std::string& spec, std::string& num){
     std::string fanerror_log;
 
     if(spec.compare("fanspeed") == 0){
-        fanerror_log = "Fan" + num + " current fan speed is lower than the normal setting range" + "\n";
+        fanerror_log = "Fan" + num + " current speed is lower than the normal setting range  |";
     }
 
     if(!fanerror_log.empty()){
