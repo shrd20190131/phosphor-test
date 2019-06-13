@@ -19,11 +19,11 @@ using SsdError = phosphor::logging::com::usi::Logging::SsdFailure::ERROR;
 using CableError = phosphor::logging::com::usi::Logging::CableFailure::ERROR;
 using FanError = phosphor::logging::com::usi::Logging::FanFailure::ERROR;
     
-void Switchlog::ssd_create_log(std::string& spec, std::string& num){
+void Createlog::ssd_create_log(std::string& spec, std::string& num){
     std::string ssderror_log;
 
     if(spec.compare("linkstatus") == 0){
-        ssderror_log = "Ssd" + num + " link fail | ";
+        ssderror_log = "Ssd" + num + " link fail" + "\n";
     }
 
     if(!ssderror_log.empty()){
@@ -32,19 +32,30 @@ void Switchlog::ssd_create_log(std::string& spec, std::string& num){
     }
 }
 
-void Switchlog::cable_create_log(std::string& spec, std::string& num){
+void Createlog::cable_create_log(std::string& spec, std::string& num){
     std::string cablerror_log;
 
     if(spec.compare("linkstatus") == 0){
-        cablerror_log = "Cable" + num + " link fail | ";
+        cablerror_log = "Cable" + num + " link fail" + "\n";
     }
 
     if(!cablerror_log.empty()){
         log<level::ERR>(cablerror_log.c_str());
         report<CableFail>(CableError(cablerror_log.c_str()));
     }
+}
 
+void Createlog::fan_create_log(std::string& spec, std::string& num){
+    std::string fanerror_log;
 
+    if(spec.compare("fanspeed") == 0){
+        fanerror_log = "Fan" + num + " current fan speed is lower than the normal setting range" + "\n";
+    }
+
+    if(!fanerror_log.empty()){
+        log<level::ERR>(fanerror_log.c_str());
+        report<FanFail>(FanError(fanerror_log.c_str()));
+    }
 }
 
 }//namespace manager

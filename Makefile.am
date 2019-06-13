@@ -1,10 +1,6 @@
 AM_DEFAULT_SOURCE_EXT = .cpp
 
-# Build these headers, don't install them
-noinst_HEADERS = \
-	usi_log.hpp
-
-sbin_PROGRAMS = phosphor-switch-log-manager
+bin_PROGRAMS = phosphor-switch-log-manager
 
 phosphor_switch_log_manager_SOURCES = \
     usi_log_main.cpp \

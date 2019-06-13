@@ -13,11 +13,12 @@ namespace jboflog
 namespace manager
 {
     
-class Switchlog
+class Createlog
 {
   public:
     void ssd_create_log(std::string& spec, std::string& num);
     void cable_create_log(std::string& spec, std::string& num);
+    void fan_create_log(std::string& spec, std::string& num);
 };
 
 }//namespace manager

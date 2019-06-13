@@ -5,7 +5,7 @@ void print_usage(void)
 {
     std::cout << "Example : phsophor-switch-log-manager -c xx -t xx -n xx"  << std::endl;
     std::cout << "[-c <x>] : ssd/cable/fan"  << std::endl;
-    std::cout << "[-t <x>] : linkstatus/status/linkspeed/....."  << std::endl;
+    std::cout << "[-t <x>] : linkstatus/fanspeed"  << std::endl;
     std::cout << "[-n <x>] : id number"  << std::endl;
 }
 
@@ -18,7 +18,7 @@ int main(int argc, char* argv[])
     std::string log_type_spec_num;
     int flag = 0;
 
-    phosphor::jboflog::manager::Switchlog switchlog_manager;
+    phosphor::jboflog::manager::Createlog Createlog_manager;
 
     while((option = getopt(argc, argv, "c:t:n:")) != -1){
         flag += 1;
@@ -41,10 +41,13 @@ int main(int argc, char* argv[])
     
     if(flag == 3){
         if(log_type.compare("ssd") == 0){
-            switchlog_manager.ssd_create_log(log_type_spec, log_type_spec_num);
+            Createlog_manager.ssd_create_log(log_type_spec, log_type_spec_num);
         }
         else if(log_type.compare("cable") == 0){
-            switchlog_manager.cable_create_log(log_type_spec, log_type_spec_num);
+            Createlog_manager.cable_create_log(log_type_spec, log_type_spec_num);
+        }
+        else if(log_type.compare("fan") == 0){
+            Createlog_manager.fan_create_log(log_type_spec, log_type_spec_num);
         }
     }
     else{
