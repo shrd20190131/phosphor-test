@@ -106,12 +106,13 @@ std::map<std::string, sdbusplus::message::variant<std::string, std::map<std::str
     sdbusplus::message::variant<std::map<std::string, std::string>> psb_error_temp;
     std::map<std::string, std::string> error;
 
-    PsStatus psstatuscall;
+    //PsStatus psstatuscall;
     //auto psa_getvalue = psstatuscall.get_value(1);
     //status["PSA"] = sdbusplus::message::variant_ns::get<std::string>(none_flag);
     error["Error1"] = "The POWER_GOOD signal is negated";
     error["Error2"] = "A temperature fault or warning has occurred";
-    status["PSA"] = sdbusplus::message::variant_ns::get<std::map<std::string, std::string>>(error);
+    psa_error_temp = error;
+    status["PSA"] = sdbusplus::message::variant_ns::get<std::map<std::string, std::string>>(psa_error_temp);
     status["PSB"] = sdbusplus::message::variant_ns::get<std::string>(none_flag);
 
 /*
