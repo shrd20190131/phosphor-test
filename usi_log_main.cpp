@@ -2,7 +2,7 @@
 #include <string>
 #include <iostream>
 #include "config.h"
-#include "ps_manager.hpp"
+#include "usi_log.hpp"
 
 int main(int argc, char**)
 {
