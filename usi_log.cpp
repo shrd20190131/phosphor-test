@@ -109,17 +109,21 @@ std::map<std::string, sdbusplus::message::variant<std::string, std::map<std::str
     //PsStatus psstatuscall;
     //auto psa_getvalue = psstatuscall.get_value(1);
     //status["PSA"] = sdbusplus::message::variant_ns::get<std::string>(none_flag);
-    //error["Error1"] = "The POWER_GOOD signal is negated";
-    //psa_error_temp = error;
-    status["PSA"] = sdbusplus::message::variant_ns::get<std::string>(none_flag);
-    //status["PSA"] = sdbusplus::message::variant_ns::get<std::map<std::string, std::string>>(psa_error_temp);
+    error["Error1"] = "The POWER_GOOD signal is negated";
+    error["Error2"] = "Output not being provided power or not being enabled";
+    error["Error3"] = "Output not being provided power or not being enabled";
+    psa_error_temp = error;
+    //status["PSA"] = sdbusplus::message::variant_ns::get<std::string>(none_flag);
+    status["PSA"] = sdbusplus::message::variant_ns::get<std::map<std::string, std::string>>(psa_error_temp);
 
-    //error.clear();
-    //error["Error1"] = "The POWER_GOOD signal is negated";
-    //error["Error2"] = "A temperature fault or warning has occurred";
-    //psb_error_temp = error;
-    status["PSB"] = sdbusplus::message::variant_ns::get<std::string>(none_flag);
-    //status["PSB"] = sdbusplus::message::variant_ns::get<std::map<std::string, std::string>>(psb_error_temp);
+    error.clear();
+    error["Error1"] = "The POWER_GOOD signal is negated";
+    error["Error2"] = "A temperature fault or warning has occurred";
+    error["Error3"] = "A temperature fault or warning has occurred";
+    error["Error4"] = "A temperature fault or warning has occurred";
+    psb_error_temp = error;
+    //status["PSB"] = sdbusplus::message::variant_ns::get<std::string>(none_flag);
+    status["PSB"] = sdbusplus::message::variant_ns::get<std::map<std::string, std::string>>(psb_error_temp);
 
 /*
     if(!psstatuscall.startwith(psa_getvalue, std::string("0x"))){
