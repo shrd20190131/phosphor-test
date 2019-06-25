@@ -114,7 +114,7 @@ std::map<std::string, sdbusplus::message::variant<std::string, std::map<std::str
     //error["Error3"] = "Output not being provided power or not being enabled";
     //error["Error4"] = "Output not being provided power or not being enabled";
     //psa_error_temp = error;
-    status["PSA"] = sdbusplus::message::variant_ns::get<std::string>(none_flag);
+    status["PSA"] = sdbusplus::message::variant_ns::get<std::string>(ok_flag);
     //status["PSA"] = sdbusplus::message::variant_ns::get<std::map<std::string, std::string>>(psa_error_temp);
 
     //error.clear();
@@ -123,7 +123,7 @@ std::map<std::string, sdbusplus::message::variant<std::string, std::map<std::str
     //error["Error3"] = "A temperature fault or warning has occurred";
     //error["Error4"] = "A temperature fault or warning has occurred";
     //psb_error_temp = error;
-    status["PSB"] = sdbusplus::message::variant_ns::get<std::string>(none_flag);
+    status["PSB"] = sdbusplus::message::variant_ns::get<std::string>(ok_flag);
     //status["PSB"] = sdbusplus::message::variant_ns::get<std::map<std::string, std::string>>(psb_error_temp);
 
 /*
