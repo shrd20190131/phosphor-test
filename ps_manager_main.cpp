@@ -18,11 +18,11 @@ int main(int argc, char**)
 
     bus.request_name(PS_BUSNAME);
 
-    //while (true)
-    //{
-    //    bus.process_discard();
-    //    bus.wait();
-    //}
+    while (true)
+    {
+        bus.process_discard();
+        bus.wait(2);
+    }
 
     return (0);
 }
