@@ -21,7 +21,7 @@ int main(int argc, char**)
     while (true)
     {
         bus.process_discard();
-        bus.wait(60);
+        bus.wait();
     }
 
     return (0);
