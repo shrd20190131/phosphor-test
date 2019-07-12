@@ -13,7 +13,7 @@ namespace manager
 
 std::string PsInit::status(std::string value){
     sleep(40);
-    return (sdbusplus::com::usi::Ssdarray::server::Test::status(value));
+    return (value);
 }
 
 } // namespace manager
